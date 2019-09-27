@@ -28,7 +28,7 @@ setInterval(function(){
 
 		console.log(data)
 
-		var url = 'https://api.github.com/gists';
+		var url = 'http://localhost:5000/';
 		fetch(url, {
 		  method: 'POST', // or 'PUT'
 		  body: JSON.stringify(data), // data can be `string` or {object}!
@@ -36,8 +36,11 @@ setInterval(function(){
 		    'Accept': 'application/json',
 	      	'Content-Type': 'application/json'
 		  }
-		}).then(res => res.json())
-		.then(response => console.log('Success:', response));
+		}).then(res => res.status)
+		.then(response => console.log('Success:', response))
+		.catch(err => {
+	        console.log('err:', err)
+	    });
 
 		chrome.runtime.sendMessage({
 		    data: d
