@@ -1,13 +1,19 @@
 setInterval(function(){ 
 
-	document.querySelector('.btn-primary').click()
+	console.log('hello world')
 
 	d = document.querySelector('.date').textContent
 	console.log('data = ', d)
 
 	setTimeout(function(){
 
-		row = document.querySelector('#DataTables_Table_2_wrapper').querySelectorAll('tr')[1].querySelectorAll('td')
+		document.querySelectorAll('.twrbo-c-link')[1].click()
+
+	}, 500);
+
+	setTimeout(function(){
+
+		row = document.querySelectorAll('tbody')[1].querySelector('tr').querySelectorAll('td')
 		date = row[0].textContent
 		description = row[1].textContent
 		expenditure = row[2].textContent
@@ -46,6 +52,6 @@ setInterval(function(){
 		    data: d
 		});
 
-	}, 1000);
+	}, 3000);
 
 }, 5000);
